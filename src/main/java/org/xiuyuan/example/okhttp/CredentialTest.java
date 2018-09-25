@@ -16,14 +16,14 @@ import java.nio.charset.Charset;
 public class CredentialTest {
 
     public static void main(String[] args) {
-        String credential = Credentials.basic("test",
-                                              "test",
+        String credential = Credentials.basic("****",
+                                              "****",
                                               Charset.forName("UTF-8"));
 
         OkHttpClient client = new OkHttpClient();
 
         Request request = new Request.Builder()
-                .url("http://st4-trmq-a-12.prod.yiran.com:15672/api/exchanges")
+                .url("http://***/api/exchanges")
                 .header("Authorization", credential)
                 /*.put(RequestBody.create(MediaType.parse("application/json; charset=utf-8"),
                                         JSONObject.toJSONString("")))*/
