@@ -23,7 +23,7 @@ public class CredentialTest {
         OkHttpClient client = new OkHttpClient();
 
         Request request = new Request.Builder()
-                .url("http://***/api/exchanges")
+                .url("http://st4-xxx-a-12.xxx.yiran.com:15672/api/exchanges")
                 .header("Authorization", credential)
                 /*.put(RequestBody.create(MediaType.parse("application/json; charset=utf-8"),
                                         JSONObject.toJSONString("")))*/
