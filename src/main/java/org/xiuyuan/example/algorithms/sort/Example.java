@@ -1,5 +1,8 @@
 package org.xiuyuan.example.algorithms.sort;
 
+import org.xiuyuan.example.algorithms.base.In;
+import org.xiuyuan.example.algorithms.base.StdOut;
+
 /**
  * created by helanzhou
  * Date: 2018/9/28
@@ -23,9 +26,9 @@ public class Example {
 
     private static void show(Comparable[] a) {
         for (int i = 0; i < a.length; i++) {
-            System.out.print(a[i] + " ");
+            StdOut.print(a[i] + " ");
         }
-        System.out.println();
+        StdOut.println();
     }
 
     public static boolean isSorted(Comparable[] a) {
@@ -38,7 +41,10 @@ public class Example {
     }
 
     public static void main(String[] args) {
-
+        String[] a = In.readStrings();
+        sort(a);
+        assert isSorted(a);
+        show(a);
     }
 
 }
