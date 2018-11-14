@@ -31,8 +31,7 @@ dependencies {
     compile group: 'commons-io', name: 'commons-io', version: "$commonsIOVersion"
     compile group: 'com.github.ben-manes.caffeine', name: 'caffeine', version: "$caffeineVersion"
     compile group: 'org.apache.commons', name: 'commons-lang3', version: "$commonsLangVersion"
-
-
+    compileOnly('org.projectlombok:lombok')
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
