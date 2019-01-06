@@ -8,10 +8,21 @@ package org.xiuyuan.example.basic;
 public class Test {
 
     public static void main(String[] args) {
-        Test test = new Test();
-        int y = test.value();
 
-        System.out.println(y);
+        int promotionLevel = Math.abs((int) (10 / 10));
+
+        switch (promotionLevel == 0 ? 0 : 31 - Integer.numberOfLeadingZeros(promotionLevel)) {
+            case 0:
+                System.out.println("low");
+                break;
+            case 1:
+                System.out.println("high");
+                break;
+            default:
+                System.out.println("disaster");
+                break;
+        }
+
     }
 
     public int value() {

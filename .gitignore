@@ -14,6 +14,7 @@
 .gradle
 .idea
 out
+/src/main/java/org/xiuyuan/example/basic/*
 *.jar
 *.war
 *.nar
