@@ -1,7 +1,5 @@
 package org.xiuyuan.example.algorithms.ds.nowcoder;
 
-import java.util.ArrayList;
-import java.util.Currency;
 import java.util.HashMap;
 
 /**
@@ -53,7 +51,6 @@ public class DeleteDuplicationClass {
             pFirst = pFirst.next;
         }
 
-
         ListNode pFir = pHead;
         for (HashMap.Entry<Integer, Integer> entry : map.entrySet()) {
             if (entry.getValue() > 1) {
@@ -76,7 +73,6 @@ public class DeleteDuplicationClass {
                 }
             }
         }
-
 
         return pFir;
     }
