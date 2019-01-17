@@ -58,7 +58,7 @@ public class PrintMatrix {
             list.add(matrix[start][i]);
         }
 
-        //从左到右打印一列
+        //从上到下打印一列
         if (start < endY) {
             for (int i = start + 1; i <= endY; i++) {
                 list.add(matrix[i][endX]);
