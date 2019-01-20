@@ -13,15 +13,11 @@ public class ConcurrentHashMapDemo {
 
     public static void main(String[] args) {
 
-        Map<String, String> map = new ConcurrentHashMap<String, String>();
+        ConcurrentHashMap<String, String> map = new ConcurrentHashMap<String, String>();
 
-        String kafka = map.computeIfAbsent("kafka", k -> {
-            map.put("aa", "a");
+        map.put("kafka", "a");
+        map.put("kafka", "b");
 
-            return "a";
-        });
-
-        System.out.println("value:" + kafka);
     }
 
 }
