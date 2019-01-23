@@ -13,7 +13,7 @@ public class TransferTree {
 
     }
 
-    public void preTranverse(BinaryNode root) {
+    public void preTraverse(BinaryNode root) {
 
         Stack<BinaryNode> stack = new Stack<>();
 
@@ -35,7 +35,7 @@ public class TransferTree {
         }
     }
 
-    public void inTranverse(BinaryNode root) {
+    public void inTraverse(BinaryNode root) {
         Stack<BinaryNode> stack = new Stack<>();
 
         BinaryNode currentNode, tmp;
@@ -56,7 +56,7 @@ public class TransferTree {
         }
     }
 
-    public void postTranverse(BinaryNode root) {
+    public void postTraverse(BinaryNode root) {
         Stack<BinaryNode> stack = new Stack<>();
 
         BinaryNode currentNode, tmp;
