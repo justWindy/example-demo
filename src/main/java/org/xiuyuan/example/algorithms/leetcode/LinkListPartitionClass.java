@@ -8,92 +8,51 @@ package org.xiuyuan.example.algorithms.leetcode;
 public class LinkListPartitionClass {
 
     public static ListNode partition(ListNode head, int x) {
+
         if (head == null) {
-            return head;
+            return null;
         }
 
         ListNode current = head;
-        int index = 0;
+
+        ListNode small, big;
+        small = big = null;
+
+        ListNode smallCur, bigCur;
+        smallCur = bigCur = null;
         while (current != null) {
-            index++;
-            if (current.val == x) {
-                break;
+            if (current.val < x) {
+                if (small == null) {
+                    small = current;
+                    smallCur = small;
+                } else {
+                    smallCur.next = current;
+                    smallCur = smallCur.next;
+                }
+            } else {
+                if (big == null) {
+                    big = current;
+                    bigCur = big;
+                } else {
+                    bigCur.next = current;
+                    bigCur = bigCur.next;
+                }
             }
             current = current.next;
         }
 
-        if (current == null) {
-            if (index == 1) {
-                return head;
-            }
-            current = head;
-            while (current != null) {
-                if (current.val > x) {
-                    break;
-                }
-                current = current.next;
-            }
-
-            if (current == null) {
-                return head;
-            }
+        if (small != null) {
+            head = small;
+        } else {
+            head = big;
         }
 
-        ListNode p1, p2, p3, p4, p5 = null, p6 = null;
 
-        p1 = p2 = head;
-        p3 = current;
-        p4 = p3.next;
-        while (p2 != null) {
-
-            if (p2.val < x) {
-                p2 = p2.next;
-            } else {
-                if (p4 == null) {
-                    p3 = current;
-                    if (p3 == p2.next || p3 == p2 || p3 == p6) {
-                        break;
-                    }
-                    if (p5 == null) {
-                        p5 = p2.next;
-                    }
-                    if (p6 == null) {
-                        p6 = p2;
-                    }
-                    if (p5.val < x) {
-                        if (p1 == head) {
-                            p2.next = p5.next;
-                            p5.next = p1;
-                            head = p5;
-                        } else {
-                            p1.next = p5;
-                            p6.next = p5.next;
-                            p5.next = p2;
-                        }
-                    } else {
-                        p5 = p5.next;
-                        p6 = p6.next;
-                    }
-                    continue;
-                }
-                if (p4.val < x) {
-                    if (current == head) {
-                        p3.next = p4.next;
-                        head = p4;
-                        head.next = current;
-                    } else {
-                        p3.next = p4.next;
-                        p1.next = p4;
-                        p4.next = p2;
-                        p1 = p1.next;
-                    }
-                    p4 = p3.next;
-                } else {
-                    p4 = p4.next;
-                    p3 = p3.next;
-                }
-            }
-
+        if (smallCur != null) {
+            smallCur.next = big;
+        }
+        if (bigCur != null) {
+            bigCur.next = null;
         }
 
         return head;
@@ -124,7 +83,7 @@ public class LinkListPartitionClass {
         node10.next = node11;
 
         ListNode node12 = new ListNode(1);
-        ListNode node = partition(node9, 3);
+        ListNode node = partition(node12, 0);
         System.out.print("[");
         while (node != null) {
             System.out.print(node.val);
