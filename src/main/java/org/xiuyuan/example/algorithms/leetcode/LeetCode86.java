@@ -1,11 +1,13 @@
 package org.xiuyuan.example.algorithms.leetcode;
 
 /**
+ * leetCode 86
+ * <p>
  * created by helanzhou
  * Date: 2019-01-21
  * Time: 20:57
  */
-public class LinkListPartitionClass {
+public class LeetCode86 {
 
     public static ListNode partition(ListNode head, int x) {
 
@@ -46,7 +48,6 @@ public class LinkListPartitionClass {
         } else {
             head = big;
         }
-
 
         if (smallCur != null) {
             smallCur.next = big;
