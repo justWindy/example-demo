@@ -34,6 +34,7 @@ public class LeetCode93 {
             return;
         }
 
+        //只能存在4节IP
         if (pos == 3) {
             int addr = Integer.parseInt(init);
             if (init.charAt(0) == '0') {
