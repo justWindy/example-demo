@@ -38,7 +38,7 @@ public class LeetCode93 {
         if (pos == 3) {
             int addr = Integer.parseInt(init);
             if (init.charAt(0) == '0') {
-                if (!(init.length() == 1 && addr == 0)) {
+                if (addr != 0) {
                     return;
                 }
             }
