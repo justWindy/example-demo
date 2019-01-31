@@ -17,7 +17,7 @@ public class LeetCode889 {
 
         LeetCode889 leetCode889 = new LeetCode889();
 
-        TreeNode treeNode = leetCode889.constructFromPrePost(pre1, post1);
+        TreeNode treeNode = leetCode889.constructFromPrePost(pre, post);
 
         System.out.println();
 
@@ -32,21 +32,12 @@ public class LeetCode889 {
 
         if (pre.length > 1) {
 
-            int leftChild = pre[1];
             int rightChild = post[post.length - 2];
 
             int leftIndex = 0;
             for (int i = 1; i < pre.length; i++) {
                 if (pre[i] == rightChild) {
                     leftIndex = i;
-                    break;
-                }
-            }
-
-            int rightIndex = 0;
-            for (int i = 0; i < post.length; i++) {
-                if (post[i] == leftChild) {
-                    rightIndex = i;
                     break;
                 }
             }
@@ -59,7 +50,7 @@ public class LeetCode889 {
             System.arraycopy(pre, 1, leftPre, 0, leftIndex - 1);
             System.arraycopy(post, 0, leftPost, 0, leftIndex - 1);
             System.arraycopy(pre, leftIndex, rightPre, 0, pre.length - leftIndex);
-            System.arraycopy(post, rightIndex + 1, rightPost, 0, pre.length - leftIndex);
+            System.arraycopy(post, leftIndex - 1, rightPost, 0, pre.length - leftIndex);
 
             root.left = constructFromPrePost(leftPre, leftPost);
             root.right = constructFromPrePost(rightPre, rightPost);
