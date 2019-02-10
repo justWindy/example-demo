@@ -1,6 +1,7 @@
 package org.xiuyuan.example.algorithms.leetcode;
 
 /**
+ * 接雨水
  * created by helanzhou
  * Date: 2019-02-10
  * Time: 16:56
@@ -34,8 +35,8 @@ public class LeetCode42 {
         }
 
         while (l < r) {
-            int left = height[l++];
-            int right = height[r--];
+            int left = height[l];
+            int right = height[r];
             if (left < right) {
                 while (l < r && left >= height[l]) {
                     result += left - height[l];
