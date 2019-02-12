@@ -1,6 +1,7 @@
 package org.xiuyuan.example.algorithms.leetcode;
 
 /**
+ * 二叉搜索树的最近公共祖先
  * created by helanzhou
  * Date: 2019-02-11
  * Time: 23:22
@@ -26,6 +27,48 @@ public class LeetCode235 {
         root1.right = root11;
         root01.left = root010;
         root01.right = root011;
+
+        LeetCode235 leetCode235 = new LeetCode235();
+        TreeNode treeNode = leetCode235.lowestCommonAncestor(root, root01, root00);
+
+        System.out.println();
+
+    }
+
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if (root == null) {
+            return null;
+        }
+
+        TreeNode lower = p;
+        TreeNode higher = q;
+        if (p.val > q.val) {
+            higher = p;
+            lower = q;
+        }
+
+        return ancestor(root, higher, lower);
+    }
+
+    private TreeNode ancestor(TreeNode root, TreeNode high, TreeNode lower) {
+
+        if (root == null) {
+            return null;
+        }
+
+        if (high.val < root.val) {
+            return ancestor(root.left, high, lower);
+        } else if (lower.val > root.val) {
+            return ancestor(root.right, high, lower);
+        } else if (lower.val < root.val && high.val > root.val) {
+            return root;
+        } else {
+            if (root.val == high.val) {
+                return high;
+            } else {
+                return lower;
+            }
+        }
     }
 
     private static class TreeNode {
