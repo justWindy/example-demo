@@ -3,6 +3,7 @@ package org.xiuyuan.example.algorithms.ds.nowcoder;
 import java.util.ArrayList;
 
 /**
+ * 从尾到头打印链表
  * created by helanzhou
  * Date: 2019-01-06
  * Time: 22:53

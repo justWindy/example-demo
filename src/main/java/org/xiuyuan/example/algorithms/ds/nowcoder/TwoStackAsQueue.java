@@ -3,6 +3,7 @@ package org.xiuyuan.example.algorithms.ds.nowcoder;
 import java.util.Stack;
 
 /**
+ * 用两个栈实现队列
  * created by helanzhou
  * Date: 2019-01-07
  * Time: 21:00

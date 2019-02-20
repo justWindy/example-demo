@@ -1,6 +1,7 @@
 package org.xiuyuan.example.algorithms.ds.nowcoder;
 
 /**
+ * 数值的整数次方
  * created by helanzhou
  * Date: 2019-01-07
  * Time: 23:09

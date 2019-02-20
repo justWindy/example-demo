@@ -1,6 +1,7 @@
 package org.xiuyuan.example.algorithms.ds.nowcoder;
 
 /**
+ * 二进制中1的个数
  * created by helanzhou
  * Date: 2019-01-07
  * Time: 22:38
