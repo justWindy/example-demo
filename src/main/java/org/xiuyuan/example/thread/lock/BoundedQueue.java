@@ -14,6 +14,7 @@ public class BoundedQueue<T> {
     private Object[] items;
 
     private int addIndex, removeIndex, count;
+
     private Lock      lock     = new ReentrantLock();
     private Condition notEmpty = lock.newCondition();
     private Condition notFull  = lock.newCondition();

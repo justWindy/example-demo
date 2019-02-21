@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 最小的K个数
  * created by helanzhou
  * Date: 2019-01-10
  * Time: 20:52

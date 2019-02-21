@@ -1,6 +1,7 @@
 package org.xiuyuan.example.algorithms.ds.nowcoder;
 
 /**
+ * 链表中倒数第K个节点
  * created by helanzhou
  * Date: 2019-01-08
  * Time: 19:26
@@ -23,6 +24,8 @@ public class FindKthToTail {
         node5.next = node6;
 
         ListNode node = findKthToTail(node1, 3);
+
+        System.out.println(findKthNode(node1, 3).val);
 
         System.out.println(node.val);
 
@@ -47,12 +50,31 @@ public class FindKthToTail {
             return null;
         }
 
-
         for (int i = 0; i < list.size() - k; i++) {
             sentinal = sentinal.next;
         }
 
         return sentinal;
+    }
+
+    private static ListNode findKthNode(ListNode head, int k) {
+        ListNode p1 = head;
+        ListNode p2 = head;
+
+        int index = 0;
+        while (p1 != null) {
+            index++;
+            p1 = p1.next;
+            if (index > k) {
+                p2 = p2.next;
+            }
+        }
+
+        if (index < k) {
+            return null;
+        }
+
+        return p2;
     }
 
     public static class ListNode {

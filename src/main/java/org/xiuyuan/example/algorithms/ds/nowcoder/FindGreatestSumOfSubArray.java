@@ -1,6 +1,7 @@
 package org.xiuyuan.example.algorithms.ds.nowcoder;
 
 /**
+ * 连续子数组的最大和
  * created by helanzhou
  * Date: 2019-01-10
  * Time: 21:23
@@ -23,7 +24,7 @@ public class FindGreatestSumOfSubArray {
         }
 
         int currentSum = 0;
-        int greatestSum = 0;
+        int greatestSum = Integer.MIN_VALUE;
 
         for (int i = 0; i < array.length; i++) {
 

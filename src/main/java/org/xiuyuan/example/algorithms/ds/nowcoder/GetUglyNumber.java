@@ -1,6 +1,7 @@
 package org.xiuyuan.example.algorithms.ds.nowcoder;
 
 /**
+ * 丑数
  * created by helanzhou
  * Date: 2019-01-11
  * Time: 10:34
